@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Support - Mouse Scroll Plus</title>
+    <meta name="description" content="Help and answers for Mouse Scroll Plus: granting Accessibility, smooth scrolling, button mapping, per-app rules, and contact.">
+    <link rel="canonical" href="https://corvusdevs.github.io/Mouse-Scroll-Plus/support.html">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://corvusdevs.github.io/Mouse-Scroll-Plus/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://corvusdevs.github.io/Mouse-Scroll-Plus/og-image.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <style>
+        /* ac-no-horizontal-scroll v1 */
+        html, body { overflow-x: clip; max-width: 100%; }
+        img, video, iframe { max-width: 100%; height: auto; }
+        pre, table { max-width: 100%; overflow-x: auto; }
+
+        :root {
+            --bg: #0b0a0c; --surface: #141215; --surface-2: #1c1a1e; --border: #2a2630;
+            --text: #efe9e6; --text-secondary: #8a8288; --accent: #ff9d3c; --accent-light: #ffb866;
+            --accent-dim: rgba(255, 157, 60, 0.1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+            background: var(--bg); color: var(--text); line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 32px;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(11, 10, 12, 0.85);
+            backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px);
+        }
+        .nav-brand {
+            font-size: 18px; font-weight: 700; color: var(--text); text-decoration: none;
+            letter-spacing: -0.3px; display: flex; align-items: center; gap: 10px;
+        }
+        .nav-brand img { width: 32px; height: 32px; border-radius: 8px; display: block; }
+        .nav-brand span { color: var(--accent); }
+        .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+        .nav-links a { font-size: 14px; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--text); }
+
+        .content { max-width: 760px; margin: 0 auto; padding: 130px 24px 100px; }
+        .content h1 { font-size: 48px; font-weight: 800; letter-spacing: -2px; margin-bottom: 10px; }
+        .content .intro { font-size: 17px; color: var(--text-secondary); margin-bottom: 48px; }
+        .content h2 { font-size: 24px; font-weight: 700; margin: 12px 0 20px; }
+
+        .steps { counter-reset: step; margin-bottom: 40px; }
+        .step { display: flex; gap: 16px; margin-bottom: 18px; align-items: flex-start; }
+        .step .num {
+            flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%;
+            background: var(--accent-dim); color: var(--accent-light);
+            display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px;
+        }
+        .step .txt { font-size: 16px; color: var(--text-secondary); line-height: 1.7; padding-top: 3px; }
+        .step .txt strong { color: var(--text); font-weight: 600; }
+
+        .faq { border-top: 1px solid var(--border); margin-top: 8px; }
+        .faq-item { border-bottom: 1px solid var(--border); padding: 22px 0; }
+        .faq-item h3 { font-size: 17px; font-weight: 650; margin-bottom: 8px; color: var(--text); }
+        .faq-item p { font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 8px; }
+        .faq-item p:last-child { margin-bottom: 0; }
+        .faq-item a { color: var(--accent); text-decoration: none; }
+        .faq-item a:hover { text-decoration: underline; }
+
+        .contact-box {
+            background: var(--surface); border: 1px solid rgba(255, 157, 60, 0.3);
+            border-radius: 16px; padding: 28px 32px; margin-top: 48px; text-align: center;
+        }
+        .contact-box h2 { margin: 0 0 8px; }
+        .contact-box p { font-size: 15px; color: var(--text-secondary); margin-bottom: 18px; }
+        .contact-box a.btn {
+            display: inline-block; background: var(--accent); color: #1a1205; font-weight: 650;
+            font-size: 15px; padding: 12px 26px; border-radius: 10px; text-decoration: none;
+        }
+
+        footer { max-width: 960px; margin: 0 auto; padding: 40px 24px 60px; border-top: 1px solid var(--border); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
+        .footer-brand .logo { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+        .footer-brand .logo span { color: var(--accent); }
+        .footer-brand p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+        .footer-col h4 { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary); margin-bottom: 14px; }
+        .footer-col a { display: block; font-size: 14px; color: var(--text); text-decoration: none; margin-bottom: 10px; transition: color 0.2s; }
+        .footer-col a:hover { color: var(--accent); }
+        .footer-bottom { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+        .footer-bottom p { font-size: 12px; color: var(--text-secondary); }
+
+        @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; } }
+        @media (max-width: 600px) {
+            .content h1 { font-size: 34px; } nav { padding: 14px 16px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+            .footer-bottom { flex-direction: column; gap: 12px; }
+        }
+
+        /* ac-nav-hamburger v1 */
+        .nav-toggle { display: none; background: none; border: 1px solid var(--border, rgba(255,255,255,0.12)); border-radius: 8px; color: var(--text, #e8e8ed); cursor: pointer; padding: 8px; align-items: center; justify-content: center; }
+        .nav-toggle svg { display: block; }
+        .nav-brand { flex-shrink: 0; }
+        @media (max-width: 720px) {
+            .nav-toggle { display: inline-flex; }
+            .nav-links {
+                display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column;
+                background: var(--bg, rgba(11,10,12,0.95)); border-top: 1px solid var(--border, rgba(255,255,255,0.08));
+                border-bottom: 1px solid var(--border, rgba(255,255,255,0.08)); padding: 4px 24px 8px; margin: 0; list-style: none; gap: 0;
+                -webkit-backdrop-filter: saturate(180%) blur(20px); backdrop-filter: saturate(180%) blur(20px);
+            }
+            .nav-links li { width: 100%; }
+            .nav-links li a { display: block; padding: 14px 0; border-top: 1px solid var(--border, rgba(255,255,255,0.08)); }
+            .nav-links li:first-child a { border-top: 0; }
+            body.nav-open .nav-links { display: flex; }
+            body.nav-open .nav-toggle { background: var(--surface, rgba(255,255,255,0.06)); }
+        }
+        /* ac-footer-mobile v1 */
+        @media (max-width: 720px) { body { min-height: 0; } footer { padding-bottom: 24px; padding-top: 24px; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="nav-brand"><img src="icon.png" alt="Mouse Scroll Plus" width="32" height="32">Mouse Scroll<span>&nbsp;Plus</span></a>
+        <!-- ac-nav-hamburger v2 --><button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="var o=document.body.classList.toggle('nav-open');this.setAttribute('aria-expanded',o);event.stopPropagation();"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button><script>(function(){document.addEventListener("click",function(e){if(!document.body.classList.contains("nav-open"))return;var n=document.querySelector("nav");if(n&&!n.contains(e.target)){document.body.classList.remove("nav-open");var b=document.querySelector(".nav-toggle");if(b)b.setAttribute("aria-expanded","false");}});})();</script>
+        <ul class="nav-links">
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="support.html">Support</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <h1>Support</h1>
+        <p class="intro">Everything you need to get Mouse Scroll Plus running, plus answers to common questions.</p>
+
+        <h2>Getting started</h2>
+        <div class="steps">
+            <div class="step"><div class="num">1</div><div class="txt">Open Mouse Scroll Plus. It lives in your <strong>menu bar</strong> (the mouse icon), not the Dock.</div></div>
+            <div class="step"><div class="num">2</div><div class="txt">On first launch it walks you through granting <strong>Accessibility</strong>. You can also click the warning in the menu, or open <strong>Settings &rsaquo; Permissions</strong>.</div></div>
+            <div class="step"><div class="num">3</div><div class="txt">In <strong>System Settings &rsaquo; Privacy &amp; Security &rsaquo; Accessibility</strong>, turn on Mouse Scroll Plus.</div></div>
+            <div class="step"><div class="num">4</div><div class="txt">That's it. Smooth scrolling activates immediately, and you can fine-tune everything from the menu-bar icon.</div></div>
+        </div>
+
+        <h2>Frequently asked questions</h2>
+        <div class="faq">
+            <div class="faq-item">
+                <h3>Why does it need Accessibility permission?</h3>
+                <p>macOS only lets an app read and reshape the mouse wheel and extra buttons if it has Accessibility permission. There is no automatic prompt for this kind of app, so you enable it by hand, one time. Everything happens on your Mac; nothing is recorded or sent anywhere.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Scrolling isn't changing. What should I check?</h3>
+                <p>Confirm Mouse Scroll Plus is turned on in System Settings &rsaquo; Privacy &amp; Security &rsaquo; Accessibility, and that the master switch in the menu is on. If you just granted permission, it takes effect right away, no restart needed.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Does it affect my trackpad?</h3>
+                <p>No. Mouse Scroll Plus only reshapes mouse-wheel scrolling. Your trackpad keeps its normal behavior.</p>
+            </div>
+            <div class="faq-item">
+                <h3>My side buttons don't do anything when I map them.</h3>
+                <p>Some mice (for example certain gaming mice) remap their side buttons in their own on-device software, so those buttons arrive as keystrokes rather than mouse buttons. In that case, set them in the mouse's own software instead. The scroll-wheel click (middle button) and standard extra buttons work directly.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I turn it off in certain apps?</h3>
+                <p>Yes. Open Settings &rsaquo; Per-app rules and add an app to disable the effect there, or give it its own scrolling. You can also set a global keyboard shortcut to toggle everything on or off.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Does it collect any data?</h3>
+                <p>No. There are no accounts, no analytics, and no network connections. See the <a href="privacy.html">Privacy Policy</a> for details.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Will it work on my iPad?</h3>
+                <p>No. Mouse Scroll Plus is a Mac app. iPadOS doesn't allow apps to reshape system scrolling, so mouse settings there live in the built-in Settings app.</p>
+            </div>
+        </div>
+
+        <div class="contact-box">
+            <h2>Still need help?</h2>
+            <p>We usually reply within a day.</p>
+            <a class="btn" href="mailto:corvusdevs@outlook.com?subject=Mouse%20Scroll%20Plus%20Support">Email support</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo">Corvus<span>Devs</span></div>
+                <p>Small apps for thoughtful people. Built with care, no tracking.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Mouse Scroll Plus</h4>
+                <a href="index.html#features">Features</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="support.html">Support</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="mailto:corvusdevs@outlook.com">corvusdevs@outlook.com</a>
+                <a href="https://corvusdevs.github.io/">CorvusDevs</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CorvusDevs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        (function(){document.addEventListener("click",function(e){if(!document.body.classList.contains("nav-open"))return;var n=document.querySelector("nav");if(n&&!n.contains(e.target)){document.body.classList.remove("nav-open");var b=document.querySelector(".nav-toggle");if(b)b.setAttribute("aria-expanded","false");}});})();
+    </script>
+</body>
+</html>

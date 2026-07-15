@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Privacy Policy - Mouse Scroll Plus</title>
+    <meta name="description" content="Mouse Scroll Plus runs entirely on your Mac. No accounts, no servers, no analytics, no tracking, no data collection.">
+    <link rel="canonical" href="https://corvusdevs.github.io/Mouse-Scroll-Plus/privacy.html">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://corvusdevs.github.io/Mouse-Scroll-Plus/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://corvusdevs.github.io/Mouse-Scroll-Plus/og-image.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <style>
+        /* ac-no-horizontal-scroll v1 */
+        html, body { overflow-x: clip; max-width: 100%; }
+        img, video, iframe { max-width: 100%; height: auto; }
+        pre, table { max-width: 100%; overflow-x: auto; }
+
+        :root {
+            --bg: #0b0a0c; --surface: #141215; --surface-2: #1c1a1e; --border: #2a2630;
+            --text: #efe9e6; --text-secondary: #8a8288; --accent: #ff9d3c; --accent-light: #ffb866;
+            --accent-dim: rgba(255, 157, 60, 0.1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+            background: var(--bg); color: var(--text); line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 32px;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(11, 10, 12, 0.85);
+            backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px);
+        }
+        .nav-brand {
+            font-size: 18px; font-weight: 700; color: var(--text); text-decoration: none;
+            letter-spacing: -0.3px; display: flex; align-items: center; gap: 10px;
+        }
+        .nav-brand img { width: 32px; height: 32px; border-radius: 8px; display: block; }
+        .nav-brand span { color: var(--accent); }
+        .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+        .nav-links a { font-size: 14px; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--text); }
+
+        .content { max-width: 740px; margin: 0 auto; padding: 130px 24px 100px; }
+        .content h1 { font-size: 48px; font-weight: 800; letter-spacing: -2px; margin-bottom: 8px; }
+        .content .last-updated { font-size: 14px; color: var(--text-secondary); margin-bottom: 56px; }
+        .content h2 { font-size: 22px; font-weight: 700; margin: 44px 0 12px; }
+        .content p { font-size: 16px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 16px; }
+        .content a { color: var(--accent); text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content ul { margin: 0 0 16px 20px; }
+        .content ul li { font-size: 16px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 6px; }
+
+        .summary-box {
+            background: var(--surface); border: 1px solid rgba(255, 157, 60, 0.3);
+            border-radius: 16px; padding: 28px 32px; margin-bottom: 48px;
+            box-shadow: 0 0 40px rgba(255, 157, 60, 0.06);
+        }
+        .summary-box p { margin-bottom: 0; font-size: 16px; color: var(--text); line-height: 1.7; }
+        .summary-box strong { color: var(--accent-light); }
+
+        footer { max-width: 960px; margin: 0 auto; padding: 40px 24px 60px; border-top: 1px solid var(--border); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
+        .footer-brand .logo { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+        .footer-brand .logo span { color: var(--accent); }
+        .footer-brand p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+        .footer-col h4 { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary); margin-bottom: 14px; }
+        .footer-col a { display: block; font-size: 14px; color: var(--text); text-decoration: none; margin-bottom: 10px; transition: color 0.2s; }
+        .footer-col a:hover { color: var(--accent); }
+        .footer-bottom { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+        .footer-bottom p { font-size: 12px; color: var(--text-secondary); }
+
+        @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; } }
+        @media (max-width: 600px) {
+            .content h1 { font-size: 34px; } nav { padding: 14px 16px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+            .footer-bottom { flex-direction: column; gap: 12px; }
+            .summary-box { padding: 20px; }
+        }
+
+        /* ac-nav-hamburger v1 */
+        .nav-toggle { display: none; background: none; border: 1px solid var(--border, rgba(255,255,255,0.12)); border-radius: 8px; color: var(--text, #e8e8ed); cursor: pointer; padding: 8px; align-items: center; justify-content: center; }
+        .nav-toggle svg { display: block; }
+        .nav-brand { flex-shrink: 0; }
+        @media (max-width: 720px) {
+            .nav-toggle { display: inline-flex; }
+            .nav-links {
+                display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column;
+                background: var(--bg, rgba(11,10,12,0.95)); border-top: 1px solid var(--border, rgba(255,255,255,0.08));
+                border-bottom: 1px solid var(--border, rgba(255,255,255,0.08)); padding: 4px 24px 8px; margin: 0; list-style: none; gap: 0;
+                -webkit-backdrop-filter: saturate(180%) blur(20px); backdrop-filter: saturate(180%) blur(20px);
+            }
+            .nav-links li { width: 100%; }
+            .nav-links li a { display: block; padding: 14px 0; border-top: 1px solid var(--border, rgba(255,255,255,0.08)); }
+            .nav-links li:first-child a { border-top: 0; }
+            body.nav-open .nav-links { display: flex; }
+            body.nav-open .nav-toggle { background: var(--surface, rgba(255,255,255,0.06)); }
+        }
+        /* ac-footer-mobile v1 */
+        @media (max-width: 720px) { body { min-height: 0; } footer { padding-bottom: 24px; padding-top: 24px; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="nav-brand"><img src="icon.png" alt="Mouse Scroll Plus" width="32" height="32">Mouse Scroll<span>&nbsp;Plus</span></a>
+        <!-- ac-nav-hamburger v2 --><button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="var o=document.body.classList.toggle('nav-open');this.setAttribute('aria-expanded',o);event.stopPropagation();"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button><script>(function(){document.addEventListener("click",function(e){if(!document.body.classList.contains("nav-open"))return;var n=document.querySelector("nav");if(n&&!n.contains(e.target)){document.body.classList.remove("nav-open");var b=document.querySelector(".nav-toggle");if(b)b.setAttribute("aria-expanded","false");}});})();</script>
+        <ul class="nav-links">
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="support.html">Support</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <h1>Privacy Policy</h1>
+        <p class="last-updated">Last updated: July 14, 2026</p>
+
+        <div class="summary-box">
+            <p><strong>The short version:</strong> Mouse Scroll Plus runs entirely on your Mac. It has no accounts, no servers, no analytics, and no third-party trackers, and it makes no network connections. The developer never sees anything.</p>
+        </div>
+
+        <h2>What data Mouse Scroll Plus stores</h2>
+        <p>Mouse Scroll Plus saves only your own preferences, locally on your Mac:</p>
+        <ul>
+            <li>Your scrolling settings (speed, smoothness, reverse, acceleration, momentum, and related options).</li>
+            <li>Your button mappings and per-app rules.</li>
+            <li>The optional nickname you give your mouse and your chosen display language.</li>
+        </ul>
+        <p>These are stored in the app's standard preferences on your device. They never leave your Mac.</p>
+
+        <h2>What the developer collects</h2>
+        <p>Nothing. The developer (CorvusDevs) does not collect, receive, store, or have access to any information about you or how you use the app. There are no analytics, no crash-reporting services, no advertising SDKs, and no tracking of any kind.</p>
+
+        <h2>Network access</h2>
+        <p>Mouse Scroll Plus makes no network requests. It works fully offline. The only links in the app open your browser or email client when you choose to visit the website or send feedback.</p>
+
+        <h2>Accessibility permission</h2>
+        <p>Mouse Scroll Plus needs macOS Accessibility permission so it can read and reshape mouse-wheel and button events. This processing happens entirely on your Mac in real time. No input, event, or usage data is recorded, stored, or transmitted anywhere.</p>
+
+        <h2>Accounts and sign-in</h2>
+        <p>There is no account, no sign-in, and no email address required. You install the app and it works.</p>
+
+        <h2>Children</h2>
+        <p>Mouse Scroll Plus is not directed at children under 13, and it collects no information from anyone.</p>
+
+        <h2>Changes to this policy</h2>
+        <p>If we make material changes to this policy, we will update the date at the top of this page and, where appropriate, note the changes in the app's release notes.</p>
+
+        <h2>Contact</h2>
+        <p>Questions about this policy? Email us at <a href="mailto:corvusdevs@outlook.com">corvusdevs@outlook.com</a>.</p>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo">Corvus<span>Devs</span></div>
+                <p>Small apps for thoughtful people. Built with care, no tracking.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Mouse Scroll Plus</h4>
+                <a href="index.html#features">Features</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="support.html">Support</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="mailto:corvusdevs@outlook.com">corvusdevs@outlook.com</a>
+                <a href="https://corvusdevs.github.io/">CorvusDevs</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CorvusDevs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        (function(){document.addEventListener("click",function(e){if(!document.body.classList.contains("nav-open"))return;var n=document.querySelector("nav");if(n&&!n.contains(e.target)){document.body.classList.remove("nav-open");var b=document.querySelector(".nav-toggle");if(b)b.setAttribute("aria-expanded","false");}});})();
+    </script>
+</body>
+</html>
