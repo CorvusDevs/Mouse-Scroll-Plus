@@ -491,15 +491,31 @@
             var have=app.locales||[]; if(have.indexOf(l)<0) return app.url;
             return app.url.replace(/\/$/,'')+'/i18n/'+l+'/';
         }
+        // --- page-carousel v3: locale-aware -------------------------------
+        // Card copy comes from a per-locale sidecar so the shared manifest stays
+        // ~2 KB gzipped instead of carrying 32 locales to every page load.
+        var I18N=null;
+        function loc(){ return (document.documentElement.lang||'en'); }
+        function pick(app){ return (I18N&&I18N[app.slug])||{}; }
+        function ctaText(){
+            if(I18N&&I18N._ui&&I18N._ui.cta) return I18N._ui.cta;
+            var el=document.getElementById('corvus-carousel-cta');
+            return (el&&el.textContent.trim())||'Learn more';
+        }
+        // Only deep-link when the app SAYS it has that locale: several sites have
+        // no /i18n/ at all and others are partial, so appending blindly 404s.
+        function href(app){
+            var l=loc(); if(l==='en') return app.url;
+            var have=app.locales||[]; if(have.indexOf(l)<0) return app.url;
+            return app.url.replace(/\/$/,'')+'/i18n/'+l+'/';
+        }
         function card(app){ var a=document.createElement('a'); a.className='corvus-carousel__card'; a.href=href(app); a.setAttribute('role','listitem');
             var t=pick(app);
             var img=document.createElement('img'); img.className='corvus-carousel__card-icon'; img.src=app.icon; img.alt=''; img.loading='lazy'; img.width=56; img.height=56;
             var tag=document.createElement('div'); tag.className='corvus-carousel__card-tagline'; tag.textContent=t.tagline||app.tagline||'';
             var name=document.createElement('div'); name.className='corvus-carousel__card-name'; name.textContent=app.name;
             var desc=document.createElement('p'); desc.className='corvus-carousel__card-desc'; desc.textContent=t.description||app.description||'';
-            var ctaEl=document.getElementById('corvus-carousel-cta');
-            var cta=document.createElement('span'); cta.className='corvus-carousel__card-cta';
-            cta.textContent=((ctaEl&&ctaEl.textContent.trim())||'Learn more')+' \u2192';
+            var cta=document.createElement('span'); cta.className='corvus-carousel__card-cta'; cta.textContent=ctaText()+' \u2192';
             a.append(img,tag,name,desc,cta); return a; }
         function wire(){ var p=section.querySelector('.corvus-carousel__nav--prev'),n=section.querySelector('.corvus-carousel__nav--next'); if(!p||!n) return; var F=80; var step=function(){return Math.max(track.clientWidth*0.8,296);};
             p.addEventListener('click',function(){track.scrollBy({left:-step(),behavior:'smooth'});}); n.addEventListener('click',function(){track.scrollBy({left:step(),behavior:'smooth'});});
