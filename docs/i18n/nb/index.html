@@ -235,6 +235,18 @@
         @media (max-width: 600px) { .corvus-carousel { margin-top: 48px; } .corvus-carousel__title { font-size: 26px; } .corvus-carousel__card { flex-basis: 240px; padding: 16px; } .corvus-carousel__nav { display: none; } }
         @media (prefers-reduced-motion: reduce) { .corvus-carousel__track { scroll-behavior: auto; transition: none; } .corvus-carousel__card { transition: none; } }
         .corvus-carousel:has(.corvus-carousel__track:empty) { display: none; }
+    
+        /* marketing-gallery v1 */
+        .shots { max-width: 1180px; margin: 0 auto; padding: 96px 24px 24px; }
+        .shots h2 { font-size: 40px; letter-spacing: -1px; text-align: center; margin-bottom: 10px; }
+        .shots .shots-sub { text-align: center; color: var(--text-secondary); margin-bottom: 40px; }
+        .shots-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+        .shots-grid figure { margin: 0; }
+        .shots-grid img {
+            width: 100%; height: auto; display: block; border-radius: 14px;
+            border: 1px solid var(--border); background: var(--surface);
+        }
+        @media (max-width: 760px) { .shots-grid { grid-template-columns: 1fr; } .shots h2 { font-size: 30px; } }
     </style>
 </head>
 <body>
@@ -353,6 +365,19 @@
             <div class="feature-row"><div class="ric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 19h18M12 4v7M8.5 8l3.5-4 3.5 4M6 19a6 6 0 0112 0"/></svg></div><div><h4 data-i18n="fl12_t">Start ved innlogging</h4><p data-i18n="fl12_d">Kjører stille i menylinjen og er klar så snart du logger på.</p></div></div>
             <div class="feature-row"><div class="ric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></div><div><h4 data-i18n="fl13_t">Trinnvis modus</h4><p data-i18n="fl13_d">Vil du foretrekke klassisk, trinnvis rulling? Sett hvor mange linjer hver markør beveger seg.</p></div></div>
             <div class="feature-row"><div class="ric"><span style="font-weight:700;font-size:14px;letter-spacing:-0.5px">文A</span></div><div><h4 data-i18n="fl14_t">33 språk</h4><p data-i18n="fl14_d">Fullstendig lokalisert med et språkvelger i appen.</p></div></div>
+        </div>
+    </section>
+
+    <section class="shots" id="screenshots">
+        <h2 data-i18n="sec_shots_title">Se det i aksjon</h2>
+        <p class="shots-sub" data-i18n="sec_shots">Skjermdokument</p>
+        <div class="shots-grid">
+            <figure><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/01-menu.jpg" data-i18n-alt="shot_1" alt="Alle mus, trackpad-glatt." width="1600" height="1000" loading="lazy" decoding="async"></figure>
+            <figure><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/02-scrolling.jpg" data-i18n-alt="shot_2" alt="Glide, ikke hopp." width="1600" height="1000" loading="lazy" decoding="async"></figure>
+            <figure><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/03-buttons.jpg" data-i18n-alt="shot_3" alt="Alle knapper, satt til bruk." width="1600" height="1000" loading="lazy" decoding="async"></figure>
+            <figure><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/04-perapp.jpg" data-i18n-alt="shot_4" alt="Dine regler, app for app." width="1600" height="1000" loading="lazy" decoding="async"></figure>
+            <figure><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/05-onboarding.jpg" data-i18n-alt="shot_5" alt="Sett opp på ett steg." width="1600" height="1000" loading="lazy" decoding="async"></figure>
+            <figure><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/06-privacy.jpg" data-i18n-alt="shot_6" alt="Privat av design." width="1600" height="1000" loading="lazy" decoding="async"></figure>
         </div>
     </section>
 
