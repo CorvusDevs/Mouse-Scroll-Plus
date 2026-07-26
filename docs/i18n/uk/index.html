@@ -236,17 +236,53 @@
         @media (prefers-reduced-motion: reduce) { .corvus-carousel__track { scroll-behavior: auto; transition: none; } .corvus-carousel__card { transition: none; } }
         .corvus-carousel:has(.corvus-carousel__track:empty) { display: none; }
     
-        /* marketing-gallery v1 */
-        .shots { max-width: 1180px; margin: 0 auto; padding: 96px 24px 24px; }
-        .shots h2 { font-size: 40px; letter-spacing: -1px; text-align: center; margin-bottom: 10px; }
-        .shots .shots-sub { text-align: center; color: var(--text-secondary); margin-bottom: 40px; }
-        .shots-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
-        .shots-grid figure { margin: 0; }
-        .shots-grid img {
-            width: 100%; height: auto; display: block; border-radius: 14px;
+    
+        /* marketing-gallery v2: main shot + thumbnail strip + lightbox */
+        .shots { max-width: 1040px; margin: 0 auto; padding: 8px 24px 8px; }
+        .shots h2 { font-size: 36px; letter-spacing: -1px; text-align: center; margin-bottom: 6px; }
+        .shots .shots-sub { text-align: center; color: var(--text-secondary); margin-bottom: 26px; font-size: 14px; }
+        .shot-main { margin: 0; }
+        .shot-open {
+            display: block; width: 100%; padding: 0; border: 0; background: none;
+            cursor: zoom-in; border-radius: 16px;
+        }
+        .shot-open img {
+            width: 100%; height: auto; display: block; border-radius: 16px;
             border: 1px solid var(--border); background: var(--surface);
         }
-        @media (max-width: 760px) { .shots-grid { grid-template-columns: 1fr; } .shots h2 { font-size: 30px; } }
+        .shot-open:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+        .shot-thumbs {
+            display: flex; gap: 10px; justify-content: center; margin-top: 14px;
+            overflow-x: auto; padding: 4px; scrollbar-width: thin;
+        }
+        .shot-thumb {
+            flex: 0 0 auto; width: 112px; padding: 0; border-radius: 8px; cursor: pointer;
+            background: none; border: 1px solid var(--border); opacity: .55;
+            transition: opacity .18s ease, border-color .18s ease;
+        }
+        .shot-thumb img { width: 100%; height: auto; display: block; border-radius: 7px; }
+        .shot-thumb:hover { opacity: .85; }
+        .shot-thumb.is-active { opacity: 1; border-color: var(--accent); }
+        .shot-thumb:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+        /* lightbox */
+        .shot-lb {
+            position: fixed; inset: 0; z-index: 200; display: none;
+            align-items: center; justify-content: center; padding: 4vmin;
+            background: rgba(0,0,0,.88); backdrop-filter: blur(6px); cursor: zoom-out;
+        }
+        .shot-lb.is-open { display: flex; }
+        .shot-lb img { max-width: 100%; max-height: 92vh; border-radius: 12px; display: block; }
+        .shot-lb-close {
+            position: absolute; top: 16px; right: 20px; width: 42px; height: 42px;
+            border-radius: 50%; border: 1px solid var(--border); background: var(--surface);
+            color: var(--text); font-size: 22px; line-height: 1; cursor: pointer;
+        }
+        .shot-lb-close:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+        body.lb-open { overflow: hidden; }
+        @media (max-width: 760px) {
+            .shots h2 { font-size: 26px; }
+            .shot-thumb { width: 84px; }
+        }
     </style>
 </head>
 <body>
@@ -313,6 +349,25 @@
         <p class="badge-note" data-i18n="badge_note">Створено для macOS 13 та новіших версій.</p>
     </header>
 
+    <section class="shots" id="screenshots">
+        <h2 data-i18n="sec_shots_title">Побачіть це в дії</h2>
+        <p class="shots-sub" data-i18n="sec_shots">Знімки екрану</p>
+        <figure class="shot-main">
+            <button class="shot-open" type="button" aria-label="Expand screenshot">
+                <img id="shotMain" src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/01-menu.jpg" data-i18n-alt="shot_1" alt="Будь-яка миша, плавність як у трекпаді." width="1600" height="1000" decoding="async">
+            </button>
+        </figure>
+        <div class="shot-thumbs" role="group" aria-label="Screenshots">
+                <button class="shot-thumb is-active" type="button" data-full="shots/01-menu.jpg" aria-label="Screenshot 1 of 6" aria-current="true"><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/01-menu.jpg" data-i18n-alt="shot_1" alt="Будь-яка миша, плавність як у трекпаді." width="1600" height="1000" loading="lazy" decoding="async"></button>
+                <button class="shot-thumb" type="button" data-full="shots/02-scrolling.jpg" aria-label="Screenshot 2 of 6"><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/02-scrolling.jpg" data-i18n-alt="shot_2" alt="Плавне ковзання, а не стрибки." width="1600" height="1000" loading="lazy" decoding="async"></button>
+                <button class="shot-thumb" type="button" data-full="shots/03-buttons.jpg" aria-label="Screenshot 3 of 6"><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/03-buttons.jpg" data-i18n-alt="shot_3" alt="Кожна кнопка, для роботи." width="1600" height="1000" loading="lazy" decoding="async"></button>
+                <button class="shot-thumb" type="button" data-full="shots/04-perapp.jpg" aria-label="Screenshot 4 of 6"><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/04-perapp.jpg" data-i18n-alt="shot_4" alt="Ваші правила, додаток за додатком." width="1600" height="1000" loading="lazy" decoding="async"></button>
+                <button class="shot-thumb" type="button" data-full="shots/05-onboarding.jpg" aria-label="Screenshot 5 of 6"><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/05-onboarding.jpg" data-i18n-alt="shot_5" alt="Налаштування за один крок." width="1600" height="1000" loading="lazy" decoding="async"></button>
+                <button class="shot-thumb" type="button" data-full="shots/06-privacy.jpg" aria-label="Screenshot 6 of 6"><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/06-privacy.jpg" data-i18n-alt="shot_6" alt="Приватність за замовчуванням." width="1600" height="1000" loading="lazy" decoding="async"></button>
+        </div>
+    </section>
+
+
     <section class="section" id="features">
         <h2 data-i18n="feat_h2">Створено для вашої прокрутки</h2>
         <p class="lead" data-i18n="feat_lead">Маленький, зосереджений і повністю на вашому Mac.</p>
@@ -368,19 +423,6 @@
         </div>
     </section>
 
-    <section class="shots" id="screenshots">
-        <h2 data-i18n="sec_shots_title">Побачіть це в дії</h2>
-        <p class="shots-sub" data-i18n="sec_shots">Знімки екрану</p>
-        <div class="shots-grid">
-            <figure><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/01-menu.jpg" data-i18n-alt="shot_1" alt="Будь-яка миша, плавність як у трекпаді." width="1600" height="1000" loading="lazy" decoding="async"></figure>
-            <figure><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/02-scrolling.jpg" data-i18n-alt="shot_2" alt="Плавне ковзання, а не стрибки." width="1600" height="1000" loading="lazy" decoding="async"></figure>
-            <figure><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/03-buttons.jpg" data-i18n-alt="shot_3" alt="Кожна кнопка, для роботи." width="1600" height="1000" loading="lazy" decoding="async"></figure>
-            <figure><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/04-perapp.jpg" data-i18n-alt="shot_4" alt="Ваші правила, додаток за додатком." width="1600" height="1000" loading="lazy" decoding="async"></figure>
-            <figure><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/05-onboarding.jpg" data-i18n-alt="shot_5" alt="Налаштування за один крок." width="1600" height="1000" loading="lazy" decoding="async"></figure>
-            <figure><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/06-privacy.jpg" data-i18n-alt="shot_6" alt="Приватність за замовчуванням." width="1600" height="1000" loading="lazy" decoding="async"></figure>
-        </div>
-    </section>
-
     <section class="closer">
         <h2 data-i18n="closer">Зробіть мишу як нову</h2>
         <div class="cta-row">
@@ -392,6 +434,7 @@
     <section id="corvus-carousel" class="corvus-carousel" aria-labelledby="corvus-carousel-title" data-current-slug="Mouse-Scroll-Plus">
         <h2 id="corvus-carousel-title" class="corvus-carousel__title" data-i18n="carousel_title">Ще від CorvusDevs</h2>
         <p class="corvus-carousel__sub" data-i18n="carousel_sub">Приватні застосунки для macOS, iOS та Safari.</p>
+        <span id="corvus-carousel-cta" hidden data-i18n="carousel_cta">Докладніше</span>
         <div class="corvus-carousel__viewport">
             <button class="corvus-carousel__nav corvus-carousel__nav--prev" type="button" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 18l-6-6 6-6"/></svg></button>
             <div class="corvus-carousel__track" role="list"></div>
@@ -433,12 +476,29 @@
         var section=document.getElementById('corvus-carousel'); if(!section) return;
         var track=section.querySelector('.corvus-carousel__track'); if(!track) return;
         function slug(){ var e=section.getAttribute('data-current-slug'); if(e) return e.toLowerCase(); var s=location.pathname.split('/').filter(Boolean); return s.length?s[0].toLowerCase():''; }
-        function card(app){ var a=document.createElement('a'); a.className='corvus-carousel__card'; a.href=app.url; a.setAttribute('role','listitem');
+        // Page locale drives the card copy. The build stamps <html lang>, so no
+        // guessing: fall back to the base language (pt-BR -> pt), then English.
+        function loc(){ return (document.documentElement.lang||'en'); }
+        function pick(app){
+            var l=loc(), i=app.i18n||{}, base=l.split('-')[0];
+            return i[l]||i[base]||{};
+        }
+        // Only deep-link when the app SAYS it has that locale. Four sites have no
+        // /i18n/ at all, so appending a locale blindly would 404.
+        function href(app){
+            var l=loc(); if(l==='en') return app.url;
+            var have=app.locales||[]; if(have.indexOf(l)<0) return app.url;
+            return app.url.replace(/\/$/,'')+'/i18n/'+l+'/';
+        }
+        function card(app){ var a=document.createElement('a'); a.className='corvus-carousel__card'; a.href=href(app); a.setAttribute('role','listitem');
+            var t=pick(app);
             var img=document.createElement('img'); img.className='corvus-carousel__card-icon'; img.src=app.icon; img.alt=''; img.loading='lazy'; img.width=56; img.height=56;
-            var tag=document.createElement('div'); tag.className='corvus-carousel__card-tagline'; tag.textContent=app.tagline||'';
+            var tag=document.createElement('div'); tag.className='corvus-carousel__card-tagline'; tag.textContent=t.tagline||app.tagline||'';
             var name=document.createElement('div'); name.className='corvus-carousel__card-name'; name.textContent=app.name;
-            var desc=document.createElement('p'); desc.className='corvus-carousel__card-desc'; desc.textContent=app.description||'';
-            var cta=document.createElement('span'); cta.className='corvus-carousel__card-cta'; cta.textContent='Learn more →';
+            var desc=document.createElement('p'); desc.className='corvus-carousel__card-desc'; desc.textContent=t.description||app.description||'';
+            var ctaEl=document.getElementById('corvus-carousel-cta');
+            var cta=document.createElement('span'); cta.className='corvus-carousel__card-cta';
+            cta.textContent=((ctaEl&&ctaEl.textContent.trim())||'Learn more')+' \u2192';
             a.append(img,tag,name,desc,cta); return a; }
         function wire(){ var p=section.querySelector('.corvus-carousel__nav--prev'),n=section.querySelector('.corvus-carousel__nav--next'); if(!p||!n) return; var F=80; var step=function(){return Math.max(track.clientWidth*0.8,296);};
             p.addEventListener('click',function(){track.scrollBy({left:-step(),behavior:'smooth'});}); n.addEventListener('click',function(){track.scrollBy({left:step(),behavior:'smooth'});});
@@ -450,6 +510,43 @@
             var frag=document.createDocumentFragment(); f.forEach(function(a){frag.appendChild(card(a));}); track.appendChild(frag); wire();
         }).catch(function(){section.style.display='none';});
     })();
+</script>
+    <div class="shot-lb" id="shotLb" role="dialog" aria-modal="true" aria-label="Screenshot">
+        <button class="shot-lb-close" type="button" aria-label="Close">&times;</button>
+        <img id="shotLbImg" src="" alt="">
+    </div>
+<script>
+(function(){
+    var main=document.getElementById('shotMain'); if(!main) return;
+    var thumbs=[].slice.call(document.querySelectorAll('.shot-thumb'));
+    var lb=document.getElementById('shotLb'), lbImg=document.getElementById('shotLbImg');
+    var opener=document.querySelector('.shot-open'), closeBtn=lb.querySelector('.shot-lb-close');
+    var lastFocus=null;
+    thumbs.forEach(function(t){
+        t.addEventListener('click', function(){
+            var img=t.querySelector('img');
+            main.src=t.getAttribute('data-full');
+            main.alt=img?img.alt:'';           // alt is localized per locale by the build
+            thumbs.forEach(function(o){ o.classList.remove('is-active'); o.removeAttribute('aria-current'); });
+            t.classList.add('is-active'); t.setAttribute('aria-current','true');
+        });
+    });
+    function open(){
+        lbImg.src=main.src; lbImg.alt=main.alt;
+        lb.classList.add('is-open'); document.body.classList.add('lb-open');
+        lastFocus=document.activeElement; closeBtn.focus();
+    }
+    function close(){
+        lb.classList.remove('is-open'); document.body.classList.remove('lb-open');
+        lbImg.src=''; if(lastFocus&&lastFocus.focus) lastFocus.focus();
+    }
+    opener.addEventListener('click', open);
+    closeBtn.addEventListener('click', function(e){ e.stopPropagation(); close(); });
+    lb.addEventListener('click', close);
+    document.addEventListener('keydown', function(e){
+        if(e.key==='Escape'&&lb.classList.contains('is-open')) close();
+    });
+})();
 </script>
 </body>
 </html>
