@@ -292,6 +292,7 @@
         }
     </style>
   <script src="/Mouse-Scroll-Plus/language-router.js"></script>
+<link rel="stylesheet" href="../../improvements.css">
 </head>
 <body>
     <nav>
@@ -359,16 +360,15 @@
     </header>
 
     <section class="shots" id="screenshots">
-        <h2 data-i18n="sec_shots_title">立即查看</h2>
-        <p class="shots-sub" data-i18n="sec_shots">截圖</p>
+        <h2 data-i18n="sec_shots_title">捲動和按鈕設定</h2>
         <figure class="shot-main">
             <button class="shot-open" type="button" aria-label="Expand screenshot">
-                <img id="shotMain" src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/01-menu.jpg" data-i18n-alt="shot_1" alt="任何滑鼠，觸控板般流暢。" width="1600" height="1000" decoding="async">
+                <img id="shotMain" src="../../shots/02-scrolling.jpg" data-i18n-alt="shot_2" alt="shot_2" width="1600" height="1000" decoding="async">
             </button>
         </figure>
         <div class="shot-thumbs" role="group" aria-label="Screenshots">
-                <button class="shot-thumb is-active" type="button" data-full="shots/01-menu.jpg" aria-label="Screenshot 1 of 6" aria-current="true"><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/01-menu.jpg" data-i18n-alt="shot_1" alt="任何滑鼠，觸控板般流暢。" width="1600" height="1000" loading="lazy" decoding="async"></button>
-                <button class="shot-thumb" type="button" data-full="shots/02-scrolling.jpg" aria-label="Screenshot 2 of 6"><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/02-scrolling.jpg" data-i18n-alt="shot_2" alt="滑動，而非跳躍。" width="1600" height="1000" loading="lazy" decoding="async"></button>
+                <button class="shot-thumb" type="button" data-full="shots/01-menu.jpg" aria-label="Screenshot 1 of 6"><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/01-menu.jpg" data-i18n-alt="shot_1" alt="任何滑鼠，觸控板般流暢。" width="1600" height="1000" loading="lazy" decoding="async"></button>
+                <button class="shot-thumb is-active" type="button" aria-current="true" data-full="shots/02-scrolling.jpg" aria-label="Screenshot 2 of 6"><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/02-scrolling.jpg" data-i18n-alt="shot_2" alt="滑動，而非跳躍。" width="1600" height="1000" loading="lazy" decoding="async"></button>
                 <button class="shot-thumb" type="button" data-full="shots/03-buttons.jpg" aria-label="Screenshot 3 of 6"><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/03-buttons.jpg" data-i18n-alt="shot_3" alt="每個按鈕，盡情發揮。" width="1600" height="1000" loading="lazy" decoding="async"></button>
                 <button class="shot-thumb" type="button" data-full="shots/04-perapp.jpg" aria-label="Screenshot 4 of 6"><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/04-perapp.jpg" data-i18n-alt="shot_4" alt="您的規則，應用程式一個一個設定。" width="1600" height="1000" loading="lazy" decoding="async"></button>
                 <button class="shot-thumb" type="button" data-full="shots/05-onboarding.jpg" aria-label="Screenshot 5 of 6"><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/05-onboarding.jpg" data-i18n-alt="shot_5" alt="一步設定。" width="1600" height="1000" loading="lazy" decoding="async"></button>
@@ -394,7 +394,7 @@
             <div class="card">
                 <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="12" height="18" rx="6"/><path d="M12 3v7"/><path d="M15 7h3M16.5 5.5v3"/></svg></div>
                 <h3 data-i18n="c3_t">重新映射額外按鈕</h3>
-                <p data-i18n="c3_d">將快速鍵、媒體鍵和動作指派給側邊按鈕。左側、右側和滾輪永遠不會被更改。</p>
+                <p data-i18n="c3_d">為側鍵指派快捷鍵和操作。左鍵和右鍵的功能維持不變，滾輪捲動有獨立設定。</p>
             </div>
             <div class="card">
                 <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
@@ -413,7 +413,7 @@
             </div>
         </div>
 
-        <p class="list-head" data-i18n="fl_head">所有功能</p>
+        <details class="advanced-features"><summary data-i18n="fl_head">所有功能</summary>
         <div class="features-list">
             <div class="feature-row"><div class="ric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M8 8l4-4 4 4M8 16l4 4 4-4"/></svg></div><div><h4 data-i18n="fl1_t">反向</h4><p data-i18n="fl1_d">可獨立切換垂直或水平捲動，觸控式軌跡板 不會被觸控。</p></div></div>
             <div class="feature-row"><div class="ric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h9M17 8h3M4 16h3M11 16h9"/><circle cx="15" cy="8" r="2.2"/><circle cx="9" cy="16" r="2.2"/></svg></div><div><h4 data-i18n="fl2_t">速度與流暢度</h4><p data-i18n="fl2_d">調整每個凹槽的移動距離及滑動持續時間。</p></div></div>
@@ -430,7 +430,8 @@
             <div class="feature-row"><div class="ric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></div><div><h4 data-i18n="fl13_t">階梯模式</h4><p data-i18n="fl13_d">偏好經典的階梯式滾動嗎？設定每個凹槽移動的列數。</p></div></div>
             <div class="feature-row"><div class="ric"><span style="font-weight:700;font-size:14px;letter-spacing:-0.5px">文A</span></div><div><h4 data-i18n="fl14_t">33 種語言</h4><p data-i18n="fl14_d">完全本地化，並內含應用程式語言選擇器。</p></div></div>
         </div>
-    </section>
+    </details>
+</section>
 
     <section class="closer">
         <h2 data-i18n="closer">讓滑鼠煥然一新</h2>

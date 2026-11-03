@@ -292,6 +292,7 @@
         }
     </style>
   <script src="/Mouse-Scroll-Plus/language-router.js"></script>
+<link rel="stylesheet" href="../../improvements.css">
 </head>
 <body>
     <nav>
@@ -359,16 +360,15 @@
     </header>
 
     <section class="shots" id="screenshots">
-        <h2 data-i18n="sec_shots_title">실시간 확인</h2>
-        <p class="shots-sub" data-i18n="sec_shots">스크린샷</p>
+        <h2 data-i18n="sec_shots_title">스크롤 및 버튼 설정</h2>
         <figure class="shot-main">
             <button class="shot-open" type="button" aria-label="Expand screenshot">
-                <img id="shotMain" src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/01-menu.jpg" data-i18n-alt="shot_1" alt="마우스, 트랙패드 모두 매끄러운 사용" width="1600" height="1000" decoding="async">
+                <img id="shotMain" src="../../shots/02-scrolling.jpg" data-i18n-alt="shot_2" alt="shot_2" width="1600" height="1000" decoding="async">
             </button>
         </figure>
         <div class="shot-thumbs" role="group" aria-label="Screenshots">
-                <button class="shot-thumb is-active" type="button" data-full="shots/01-menu.jpg" aria-label="Screenshot 1 of 6" aria-current="true"><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/01-menu.jpg" data-i18n-alt="shot_1" alt="마우스, 트랙패드 모두 매끄러운 사용" width="1600" height="1000" loading="lazy" decoding="async"></button>
-                <button class="shot-thumb" type="button" data-full="shots/02-scrolling.jpg" aria-label="Screenshot 2 of 6"><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/02-scrolling.jpg" data-i18n-alt="shot_2" alt="매끄럽게 미끄러지세요, 점프하지 마세요." width="1600" height="1000" loading="lazy" decoding="async"></button>
+                <button class="shot-thumb" type="button" data-full="shots/01-menu.jpg" aria-label="Screenshot 1 of 6"><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/01-menu.jpg" data-i18n-alt="shot_1" alt="마우스, 트랙패드 모두 매끄러운 사용" width="1600" height="1000" loading="lazy" decoding="async"></button>
+                <button class="shot-thumb is-active" type="button" aria-current="true" data-full="shots/02-scrolling.jpg" aria-label="Screenshot 2 of 6"><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/02-scrolling.jpg" data-i18n-alt="shot_2" alt="매끄럽게 미끄러지세요, 점프하지 마세요." width="1600" height="1000" loading="lazy" decoding="async"></button>
                 <button class="shot-thumb" type="button" data-full="shots/03-buttons.jpg" aria-label="Screenshot 3 of 6"><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/03-buttons.jpg" data-i18n-alt="shot_3" alt="모든 버튼, 활용하세요." width="1600" height="1000" loading="lazy" decoding="async"></button>
                 <button class="shot-thumb" type="button" data-full="shots/04-perapp.jpg" aria-label="Screenshot 4 of 6"><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/04-perapp.jpg" data-i18n-alt="shot_4" alt="규칙은 앱마다 다릅니다." width="1600" height="1000" loading="lazy" decoding="async"></button>
                 <button class="shot-thumb" type="button" data-full="shots/05-onboarding.jpg" aria-label="Screenshot 5 of 6"><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/05-onboarding.jpg" data-i18n-alt="shot_5" alt="한 단계로 설정하세요." width="1600" height="1000" loading="lazy" decoding="async"></button>
@@ -394,7 +394,7 @@
             <div class="card">
                 <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="12" height="18" rx="6"/><path d="M12 3v7"/><path d="M15 7h3M16.5 5.5v3"/></svg></div>
                 <h3 data-i18n="c3_t">추가 버튼 재할당</h3>
-                <p data-i18n="c3_d">측면 버튼에 단축키, 미디어 키, 및 작업을 할당합니다. 왼쪽, 오른쪽, 및 스크롤 휠은 변경되지 않습니다.</p>
+                <p data-i18n="c3_d">측면 버튼에 단축키와 동작을 지정하세요. 왼쪽 및 오른쪽 클릭의 기능은 유지되며, 휠 스크롤은 별도로 설정합니다.</p>
             </div>
             <div class="card">
                 <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
@@ -413,7 +413,7 @@
             </div>
         </div>
 
-        <p class="list-head" data-i18n="fl_head">모든 기능</p>
+        <details class="advanced-features"><summary data-i18n="fl_head">모든 기능</summary>
         <div class="features-list">
             <div class="feature-row"><div class="ric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M8 8l4-4 4 4M8 16l4 4 4-4"/></svg></div><div><h4 data-i18n="fl1_t">방향 반전</h4><p data-i18n="fl1_d">수직 또는 수평 스크롤을 독립적으로 뒤집을 수 있으며, 트랙패드은 절대 터치되지 않습니다.</p></div></div>
             <div class="feature-row"><div class="ric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h9M17 8h3M4 16h3M11 16h9"/><circle cx="15" cy="8" r="2.2"/><circle cx="9" cy="16" r="2.2"/></svg></div><div><h4 data-i18n="fl2_t">속도 및 부드러움</h4><p data-i18n="fl2_d">각 노치가 이동하는 거리와 글라이드의 지속 시간을 조절할 수 있습니다.</p></div></div>
@@ -430,7 +430,8 @@
             <div class="feature-row"><div class="ric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></div><div><h4 data-i18n="fl13_t">단계를 사용한 모드</h4><p data-i18n="fl13_d">고전적인 계단식 스크롤을 선호하시나요? 각 노치가 이동할 줄 수를 설정하세요.</p></div></div>
             <div class="feature-row"><div class="ric"><span style="font-weight:700;font-size:14px;letter-spacing:-0.5px">文A</span></div><div><h4 data-i18n="fl14_t">33 개 언어</h4><p data-i18n="fl14_d">완전히 현지화되어 앱 내 언어 선택기를 제공합니다.</p></div></div>
         </div>
-    </section>
+    </details>
+</section>
 
     <section class="closer">
         <h2 data-i18n="closer">새로운 마우스 느낌</h2>

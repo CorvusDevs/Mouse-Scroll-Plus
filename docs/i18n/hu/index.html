@@ -292,6 +292,7 @@
         }
     </style>
   <script src="/Mouse-Scroll-Plus/language-router.js"></script>
+<link rel="stylesheet" href="../../improvements.css">
 </head>
 <body>
     <nav>
@@ -359,16 +360,15 @@
     </header>
 
     <section class="shots" id="screenshots">
-        <h2 data-i18n="sec_shots_title">Lássa a cselekvésben</h2>
-        <p class="shots-sub" data-i18n="sec_shots">Képernyőfelvételek</p>
+        <h2 data-i18n="sec_shots_title">Görgetési és gombbeállítások</h2>
         <figure class="shot-main">
             <button class="shot-open" type="button" aria-label="Expand screenshot">
-                <img id="shotMain" src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/01-menu.jpg" data-i18n-alt="shot_1" alt="Bármelyik egér, trackpad-sima." width="1600" height="1000" decoding="async">
+                <img id="shotMain" src="../../shots/02-scrolling.jpg" data-i18n-alt="shot_2" alt="shot_2" width="1600" height="1000" decoding="async">
             </button>
         </figure>
         <div class="shot-thumbs" role="group" aria-label="Screenshots">
-                <button class="shot-thumb is-active" type="button" data-full="shots/01-menu.jpg" aria-label="Screenshot 1 of 6" aria-current="true"><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/01-menu.jpg" data-i18n-alt="shot_1" alt="Bármelyik egér, trackpad-sima." width="1600" height="1000" loading="lazy" decoding="async"></button>
-                <button class="shot-thumb" type="button" data-full="shots/02-scrolling.jpg" aria-label="Screenshot 2 of 6"><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/02-scrolling.jpg" data-i18n-alt="shot_2" alt="Gördül, nem ugrik." width="1600" height="1000" loading="lazy" decoding="async"></button>
+                <button class="shot-thumb" type="button" data-full="shots/01-menu.jpg" aria-label="Screenshot 1 of 6"><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/01-menu.jpg" data-i18n-alt="shot_1" alt="Bármelyik egér, trackpad-sima." width="1600" height="1000" loading="lazy" decoding="async"></button>
+                <button class="shot-thumb is-active" type="button" aria-current="true" data-full="shots/02-scrolling.jpg" aria-label="Screenshot 2 of 6"><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/02-scrolling.jpg" data-i18n-alt="shot_2" alt="Gördül, nem ugrik." width="1600" height="1000" loading="lazy" decoding="async"></button>
                 <button class="shot-thumb" type="button" data-full="shots/03-buttons.jpg" aria-label="Screenshot 3 of 6"><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/03-buttons.jpg" data-i18n-alt="shot_3" alt="Minden gomb, használatra állítva." width="1600" height="1000" loading="lazy" decoding="async"></button>
                 <button class="shot-thumb" type="button" data-full="shots/04-perapp.jpg" aria-label="Screenshot 4 of 6"><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/04-perapp.jpg" data-i18n-alt="shot_4" alt="A szabályok alkalmazásonként." width="1600" height="1000" loading="lazy" decoding="async"></button>
                 <button class="shot-thumb" type="button" data-full="shots/05-onboarding.jpg" aria-label="Screenshot 5 of 6"><img src="https://corvusdevs.github.io/Mouse-Scroll-Plus/shots/05-onboarding.jpg" data-i18n-alt="shot_5" alt="Egy lépésben beállítás." width="1600" height="1000" loading="lazy" decoding="async"></button>
@@ -394,7 +394,7 @@
             <div class="card">
                 <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="12" height="18" rx="6"/><path d="M12 3v7"/><path d="M15 7h3M16.5 5.5v3"/></svg></div>
                 <h3 data-i18n="c3_t">További gombok újrakiosztása</h3>
-                <p data-i18n="c3_d">Rendeljen gyorsbillentyűket, médiabillentyűket és műveleteket az oldalsó gombokhoz. A bal, a jobb gomb és a görgetőkerék soha nem változik.</p>
+                <p data-i18n="c3_d">Rendelj gyorsbillentyűket és műveleteket az oldalsó gombokhoz. A bal és jobb kattintás megőrzi a funkcióját; az egérgörgő görgetése külön állítható.</p>
             </div>
             <div class="card">
                 <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
@@ -413,7 +413,7 @@
             </div>
         </div>
 
-        <p class="list-head" data-i18n="fl_head">Minden, amit csinál</p>
+        <details class="advanced-features"><summary data-i18n="fl_head">Minden, amit csinál</summary>
         <div class="features-list">
             <div class="feature-row"><div class="ric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M8 8l4-4 4 4M8 16l4 4 4-4"/></svg></div><div><h4 data-i18n="fl1_t">Fordított irány</h4><p data-i18n="fl1_d">A függőleges vagy vízszintes görgetést függetlenül fordítsa meg; a Trackpad érintetlen marad.</p></div></div>
             <div class="feature-row"><div class="ric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h9M17 8h3M4 16h3M11 16h9"/><circle cx="15" cy="8" r="2.2"/><circle cx="9" cy="16" r="2.2"/></svg></div><div><h4 data-i18n="fl2_t">Sebesség és simaság</h4><p data-i18n="fl2_d">Állítsa be, milyen messzire jusson minden egyes kattanás, és milyen hosszú legyen a csúszás.</p></div></div>
@@ -430,7 +430,8 @@
             <div class="feature-row"><div class="ric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></div><div><h4 data-i18n="fl13_t">Lépcsőzetes mód</h4><p data-i18n="fl13_d">A klasszikus lépcsőzetes görgetést preferálja? Állítsa be, hány sort mozogjon minden egyes kattanás.</p></div></div>
             <div class="feature-row"><div class="ric"><span style="font-weight:700;font-size:14px;letter-spacing:-0.5px">文A</span></div><div><h4 data-i18n="fl14_t">33 nyelv</h4><p data-i18n="fl14_d">Teljesen lokalizált, beépített nyelvválasztóval.</p></div></div>
         </div>
-    </section>
+    </details>
+</section>
 
     <section class="closer">
         <h2 data-i18n="closer">Varázsolja újjá az egeret.</h2>
