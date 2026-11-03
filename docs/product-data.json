@@ -1,0 +1,21 @@
+{
+  "slug": "Mouse-Scroll-Plus",
+  "name": "Mouse Scroll Plus",
+  "appStoreId": 6790469923,
+  "version": "1.0.2",
+  "releaseDate": "2026-09-03T04:01:17Z",
+  "originalReleaseDate": "2026-07-26T07:00:00Z",
+  "platforms": [
+    "macOS"
+  ],
+  "requirements": {
+    "macOS": "13.0"
+  },
+  "store": {
+    "kind": "app-store",
+    "label": "App Store",
+    "url": "https://apps.apple.com/app/id6790469923"
+  },
+  "metadataSource": "https://itunes.apple.com/lookup?id=6790469923&country=us",
+  "sourceCatalog": "https://corvusdevs.github.io/apps.json"
+}
